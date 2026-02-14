@@ -1,0 +1,7 @@
+# Generated docsets
+*.docset/
+
+# Bundler
+Gemfile
+Gemfile.lock
+.bundle/

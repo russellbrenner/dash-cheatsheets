@@ -44,23 +44,22 @@ end
 - **notes**: Optional extended explanation or examples
 - **category**: Groups related entries together
 
-## Testing Cheatsheets
+## Building Docsets
 
-To preview cheatsheets locally, use the Kapeli cheatsheet generator:
+Build all cheatsheets using Docker (requires Docker):
 
 ```bash
-# Clone the official repo which contains the generator
-git clone https://github.com/Kapeli/cheatsheets.git kapeli-cheatsheets
-cd kapeli-cheatsheets
-
-# Copy your cheatsheet
-cp ../dash-cheatsheets/cheatsheets_*.rb cheatsheets/
-
-# Generate docsets (requires Ruby)
-ruby cheatsheet_generator.rb
+./build.sh
 ```
 
-Generated `.docset` files appear in the `docsets/` directory and can be imported into Dash.
+This uses Ruby 2.7 + cheatset in Docker to generate `.docset` files. The cheatset gem has strict Ruby version requirements that don't work with modern Ruby.
+
+Install to Dash:
+
+```bash
+cp -r *.docset ~/Library/Application\ Support/Dash/Cheat\ Sheets/
+# Then restart Dash or rescan cheatsheets from Preferences
+```
 
 ## Contributing to Kapeli
 
